@@ -9,8 +9,8 @@ function mapDispatchToProps(dispatch) {
 }
 
 class ConnectedForm extends Component {
-  constructor() {
-    super({});
+  constructor(props) {
+    super(props);
 
     this.state = {
       number: '',

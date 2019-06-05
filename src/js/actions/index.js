@@ -6,7 +6,7 @@ export function addInvoice(payload) {
 
 export function fetchInvoices() {
   return dispatch => {
-    fetch('http://localhost:8081/invoices').then(response => {
+    return fetch('http://localhost:8081/invoices').then(response => {
       dispatch({type: actionTypes.FETCH_INVOICES, payload: response.json()});
     }).catch(error =>
         dispatch({type: actionTypes.FETCH_FAILED, error}),

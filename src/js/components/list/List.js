@@ -13,8 +13,8 @@ const mapDispatchToProps = dispatch => {
 };
 
 class ConnectedList extends Component {
-  constructor() {
-    super({});
+  constructor(props) {
+    super(props);
     this.state = {
       invoices: [],
     };
@@ -25,12 +25,10 @@ class ConnectedList extends Component {
   }
 
   render() {
-    const {invoices} = this.state;
-
     return (
         <table>
           <tbody>
-          {invoices.map(el => (
+          {this.props.invoices.map(el => (
               <tr key={el.number}>
                 <td>{el.number}</td>
                 <td>{el.issueDate}</td>
