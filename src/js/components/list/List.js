@@ -27,11 +27,22 @@ class ConnectedList extends Component {
   render() {
     return (
         <table>
+          <caption>Total {this.props.invoices.length} documents</caption>
+          <thead>
+            <tr>
+              <th>Number</th>
+              <th>Recipient</th>
+              <th>Issue date</th>
+              <th>Gross</th>
+            </tr>
+          </thead>
           <tbody>
           {this.props.invoices.map(el => (
               <tr key={el.number}>
                 <td>{el.number}</td>
+                <td>{el.recipient.name}</td>
                 <td>{el.issueDate}</td>
+                <td>{el.totalGrossAmount.amount} {el.totalGrossAmount.currency}</td>
               </tr>
           ))}
           </tbody>
